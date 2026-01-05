@@ -4,6 +4,8 @@ Sync [monobank](https://api.monobank.ua/docs/) to [ActualBudget](https://actualb
 
 ## Disclaimer
 
+Retiring this repository, moving to a local git server.
+
 This is my first steps in JS - this code is brutally bad.
 
 Mainly, this is used for personal purposes -
