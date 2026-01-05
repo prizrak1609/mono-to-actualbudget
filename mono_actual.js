@@ -29,20 +29,25 @@ function sleep(ms) {
 
 // const example_mono_trans = [
     //   {
-    //     id: 'aaaa',
-    //     time: 1705091543,
-    //     description: 'test',
-    //     mcc: 4829,
-    //     originalMcc: 4829,
-    //     amount: -100,
-    //     operationAmount: -100,
-    //     currencyCode: 980,
-    //     commissionRate: 0,
-    //     cashbackAmount: 0,
-    //     balance: 536687,
-    //     hold: true,
-    //     receiptId: 'xxxxx'
-    //   }
+    //   "id": "ZuHWzqkKGVo=",
+    //   "time": 1554466347,
+    //   "description": "Покупка щастя",
+    //   "mcc": 7997,
+    //   "originalMcc": 7997,
+    //   "hold": false,
+    //   "amount": -95000,
+    //   "operationAmount": -95000,
+    //   "currencyCode": 980,
+    //   "commissionRate": 0,
+    //   "cashbackAmount": 19000,
+    //   "balance": 10050000,
+    //   "comment": "За каву",
+    //   "receiptId": "XXXX-XXXX-XXXX-XXXX",
+    //   "invoiceId": "2103.в.27",
+    //   "counterEdrpou": "3096889974",
+    //   "counterIban": "UA898999980000355639201001404",
+    //   "counterName": "ТОВАРИСТВО З ОБМЕЖЕНОЮ ВІДПОВІДАЛЬНІСТЮ «ВОРОНА»"
+	//   }
     // ];
 async function fetch_data() {
   let TOTAL_DAYS_SYNC = DAYS_TO_SYNC;
@@ -247,6 +252,7 @@ async function fetch_data() {
 
             create_trans.account = data.actual_card;
             create_trans.amount = exp.amount;
+			create_trans.notes = exp.comment;
             create_trans.date = new Date(exp.time * 1000).toISOString().slice(0, 10);
             create_trans.payee_name = exp.description;
             create_trans.imported_id = exp.id
